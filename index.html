@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Password Validator</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Password - Validator</h1>
+    <div>
+      <input type="text" placeholder="Enter Password" oninput="handleChange(event)"></input>
+      <button onclick="handleClick()">Is Password Valid</button>
+      <br>
+    </div>
+    <div>
+      <h3>Output</h3>
+      <table id="table">
+        <tr>
+          <th>Password</th>
+          <th>IsValid</th>
+          <th>Message</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="./js/password-validator.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>
