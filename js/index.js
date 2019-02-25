@@ -21,7 +21,8 @@ const createRow = input => {
 
 const enterDataInRow = (data, row) => {
   const response = passwordValidator(data);
-  const dataArr = [data, response.success, response.message];
+  const msg = response.success ? "Success" : "Failure"
+  const dataArr = [data, response.success, `${msg} ${response.message}`];
   for (let i = 0; i < 3; ++i) {
     const tableData = document.createElement("td");
     const text = document.createTextNode(dataArr[i]);
