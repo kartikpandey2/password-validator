@@ -36,12 +36,36 @@ const isPasswordEligible = password => {
   /**
    * Regular expression for [a-z], [0-9], [A-Z] and [*$_#=@].
    */
-  const regEx1 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[*$_#=@])/;
+  const regEx1 = /^(?=.*[a-z])/;
   if (!regEx1.test(password)) {
     return {
       success: false,
       message:
-        "Password must contain at least one letter from [a-zA-Z0-9*$_#=@]"
+        "Password must contain at least one letter from [a-z]"
+    };
+  }
+  const regEx2 = /^(?=.*[A-Z])/;
+  if (!regEx2.test(password)) {
+    return {
+      success: false,
+      message:
+        "Password must contain at least one letter from [A-Z]"
+    };
+  }
+  const regEx3 = /^(?=.*[0-9])/;
+  if (!regEx3.test(password)) {
+    return {
+      success: false,
+      message:
+        "Password must contain at least one letter from [0-9]"
+    };
+  }
+  const regEx4 = /^(?=.*[*$_#=@])/;
+  if (!regEx4.test(password)) {
+    return {
+      success: false,
+      message:
+        "Password must contain at least one letter from [*$_#=@]"
     };
   }
 
@@ -49,8 +73,8 @@ const isPasswordEligible = password => {
    * Regular expression to prevent user to enter [%!)(] characters.
    */
 
-  const regEx2 = /^(?!.*[%!)(])/;
-  if (!regEx2.test(password)) {
+  const regEx5 = /^(?!.*[%!)(])/;
+  if (!regEx5.test(password)) {
     return {
       success: false,
       message: "Password cannot contain %!)("
